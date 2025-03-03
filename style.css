@@ -85,4 +85,12 @@ input[type="submit"]:hover {
     background-color: #e6c300; /* Slightly darker gold on hover */
 }
 
+/* Image Styling to ensure it does not exceed its container */
+img {
+    width: 100%; /* makes the image fill the container width */
+    height: 100%; /* makes the image fill the container height */
+    object-fit: cover; /* ensures image covers the area without stretching */
+    display: block; /* removes any extra space around the image */
+}
+
 
