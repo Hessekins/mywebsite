@@ -39,20 +39,31 @@ label {
 /* Input and Textarea Styling */
 input[type="text"],
 input[type="email"],
-textarea {
+input[type="text"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    background: #333; /* Dark background for inputs */
-    border: 1px solid #555; /* Lighter border for inputs */
+    background: #222; /* Dark background for inputs */
+    border: 1px solid #555; /* Subtle border for inputs */
     border-radius: 4px;
     color: white; /* White text color for inputs */
 }
 
 /* Textarea Specific Styling */
 textarea {
-    height: 100px;
-    resize: vertical; /* Allows resizing only vertically */
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background: #222;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: white;
+    height: auto; /* Auto-adjusts height initially */
+    max-height: 100px; /* Maximum height */
+    min-height: 50px; /* Minimum height, keeps it uniform */
+    overflow-y: auto; /* Allows scrolling vertically */
+    resize: none; /* Disables resizing */
+    maxlength: 250; /* Limits character input to 250 */
 }
 
 /* Submit Button Styling */
@@ -73,4 +84,5 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #e6c300; /* Slightly darker gold on hover */
 }
+
 
