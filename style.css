@@ -9,7 +9,7 @@ body {
 
 /* Content Area Styling */
 .content {
-    width: 50%;
+    width: 90%;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -92,5 +92,6 @@ img {
     object-fit: cover; /* ensures image covers the area without stretching */
     display: block; /* removes any extra space around the image */
 }
+
 
 
