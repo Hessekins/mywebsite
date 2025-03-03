@@ -23,4 +23,19 @@ img {
 h1 {
     color: #ffffff; /* Makes the text color white for contrast */
 }
+/* Add or update this in your style.css file */
+label {
+    color: white; /* Ensures text labels are white */
+}
+
+input, textarea {
+    color: white; /* Changes text inside inputs and textareas to white */
+    background: #333; /* Optional: changes the background of inputs to a darker shade for contrast */
+    border: 1px solid white; /* Optional: adds a white border to the inputs */
+}
+
+.form-field {
+    margin-bottom: 10px; /* Adds spacing between form fields */
+}
+
 
