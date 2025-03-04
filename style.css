@@ -25,6 +25,11 @@ h1 {
     color: #FFD700; /* Gold color for headings */
 }
 
+h2 {
+    text-align: center;
+    color: #FFFFFF; /* Gold color for headings */
+}
+
 /* Form Field Styling */
 .form-field {
     margin-bottom: 15px;
