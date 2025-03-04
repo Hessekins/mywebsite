@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/mywebsite/CopilotIndices/17.13.433.20974/CodeChunks.db-wal
+/.vs/mywebsite/FileContentIndex/707e8f7f-7fcf-4368-877d-02428fd6e27d.vsidx
+/.vs/mywebsite/FileContentIndex/728355a2-b00a-4a25-b8d1-3ab0c5c61d7f.vsidx
+/.vs/mywebsite/FileContentIndex/4a6608c2-2e83-432b-80eb-7356c7374a99.vsidx
+/.vs/mywebsite/FileContentIndex/e7ac7fa0-e5c6-4f7c-ae17-d419ed579f38.vsidx
+/.vs/mywebsite/FileContentIndex
+/.vs/slnx.sqlite
