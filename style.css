@@ -1,26 +1,102 @@
-﻿body, html {
-    height: 100%;
-    margin: 0;
+﻿/* General Body Styling */
+body {
     font-family: Arial, sans-serif;
-    background-color: #2b2b2b; /* Dark grey background */
+    background-color: #333; /* Dark background for the whole page */
+    color: white; /* White text color for better readability */
+    margin: 0;
+    padding: 20px;
 }
 
+/* Content Area Styling */
 .content {
-    height: 100vh; /* Set content height to be exactly the height of the viewport */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #444; /* Slightly lighter background for the content area */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-sizing: border-box;
 }
 
-img {
-    max-width: 75%; /* Reduce the size to fit on one page */
-    max-height: 75vh; /* Adjust the height based on viewport height */
-    border-radius: 8px; /* Optional: for rounded corners */
-}
-
+/* Heading Styling */
 h1 {
-    color: #ffffff; /* Makes the text color white for contrast */
+    text-align: center;
+    color: #FFD700; /* Gold color for headings */
 }
+
+h3 {
+    text-align: center;
+    color: #FFFFFF; /* Gold color for headings */
+}
+
+/* Form Field Styling */
+.form-field {
+    margin-bottom: 15px;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+/* Input and Textarea Styling */
+input[type="text"],
+input[type="email"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background: #222; /* Dark background for inputs */
+    border: 1px solid #555; /* Subtle border for inputs */
+    border-radius: 4px;
+    color: white; /* White text color for inputs */
+}
+
+/* Textarea Specific Styling */
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background: #222;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: white;
+    height: auto; /* Auto-adjusts height initially */
+    max-height: 100px; /* Maximum height */
+    min-height: 50px; /* Minimum height, keeps it uniform */
+    overflow-y: auto; /* Allows scrolling vertically */
+    resize: none; /* Disables resizing */
+    maxlength: 250; /* Limits character input to 250 */
+}
+
+/* Submit Button Styling */
+input[type="submit"] {
+    background-color: #FFD700; /* Gold background for submit button */
+    color: #333; /* Dark text for visibility */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't add to the width */
+}
+
+/* Hover Effect for Submit Button */
+input[type="submit"]:hover {
+    background-color: #e6c300; /* Slightly darker gold on hover */
+}
+
+/* Image Styling to ensure it does not exceed its container */
+img {
+    width: 100%; /* makes the image fill the container width */
+    height: 100%; /* makes the image fill the container height */
+    object-fit: contain; /* ensures image covers the area without stretching */
+    display: block; /* removes any extra space around the image */
+}
+
 
