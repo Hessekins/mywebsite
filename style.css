@@ -1,4 +1,4 @@
-﻿/* General Body Styling */
+/* General Body Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #333; /* Dark background for the whole page */
@@ -12,22 +12,17 @@ body {
     width: 90%;
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px 40px;
+    padding: 20px 40px; /* Updated to add horizontal padding */
     background-color: #444; /* Slightly lighter background for the content area */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding is included in the width */
 }
 
 /* Heading Styling */
 h1 {
     text-align: center;
     color: #FFD700; /* Gold color for headings */
-}
-
-h3 {
-    text-align: center;
-    color: #FFFFFF; /* Gold color for headings */
 }
 
 /* Form Field Styling */
@@ -77,12 +72,13 @@ input[type="submit"] {
     background-color: #FFD700; /* Gold background for submit button */
     color: #333; /* Dark text for visibility */
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 8px 16px; /* Slightly smaller padding */
+    font-size: 14px; /* Smaller font size */
     cursor: pointer;
     border-radius: 4px;
     display: block;
-    width: 100%;
+    width: 50%; /* Smaller width */
+    margin: 0 auto; /* Centered horizontally */
     box-sizing: border-box; /* Ensures padding doesn't add to the width */
 }
 
@@ -93,10 +89,12 @@ input[type="submit"]:hover {
 
 /* Image Styling to ensure it does not exceed its container */
 img {
-    width: 100%; /* makes the image fill the container width */
-    height: 100%; /* makes the image fill the container height */
-    object-fit: contain; /* ensures image covers the area without stretching */
-    display: block; /* removes any extra space around the image */
+    width: 100%; /* Makes the image fill the container width */
+    height: 100%; /* Makes the image fill the container height */
+    object-fit: contain; /* Ensures the entire image is visible, may leave empty space */
+    display: block; /* Removes any extra space around the image */
 }
+
+
 
 
