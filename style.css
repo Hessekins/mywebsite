@@ -5,6 +5,50 @@ body {
     color: white; /* White text color for better readability */
     margin: 0;
     padding: 20px;
+    padding-top: 70px; /* Adds space at the top to avoid overlap with the navbar */
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    background-color: #333; /* Dark background for the navbar */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; /* Makes the navbar fixed at the top */
+    width: 100%; /* Full width */
+    left: 0; /* Align left edge with the page */
+    right: 0; /* Align right edge with the page */
+    top: 0; /* Position at the very top of the page */
+    z-index: 1000; /* Ensures the navbar is above all other content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Subtle shadow for floating effect */
+}
+
+.nav-container {
+    width: 100%; /* Adjusted to ensure it spans the full width of the viewport */
+    margin: 0 auto; /* Ensures it's centered */
+    padding: 0 20px; /* Padding to match the body content */
+}
+
+.nav-links {
+    list-style: none; /* Removes bullet points from the list */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+    display: flex; /* Uses flexbox for layout */
+    justify-content: center; /* Centers the navigation links horizontally */
+}
+
+.nav-links li {
+    padding: 0 20px; /* Spacing between the links */
+}
+
+.nav-links a {
+    color: #FFD700; /* Gold color for links */
+    text-decoration: none; /* Removes underline from links */
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #e6c300; /* Slightly darker gold on hover */
 }
 
 /* Content Area Styling */
@@ -44,8 +88,7 @@ label {
 
 /* Input and Textarea Styling */
 input[type="text"],
-input[type="email"],
-input[type="text"] {
+input[type="email"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -99,6 +142,8 @@ img {
     object-fit: contain; /* Ensures the entire image is visible, may leave empty space */
     display: block; /* Removes any extra space around the image */
 }
+
+
 
 
 
