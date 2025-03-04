@@ -1,47 +1,65 @@
-﻿    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hurt Feelings Report</title>
     <link rel="stylesheet" href="style.css">
-    <title>Contact Us</title>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contactus.html">Contact Us</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="content">
-        <h1>Contact Us</h1>
-        <form action="https://api.staticforms.xyz/submit" method="post">
-            <input type="hidden" name="accessKey" value="4287e292-bd94-48bc-aee9-04b732848b05">
-            <input type="hidden" name="redirectTo" value="https://www.itsahessething.com/thankyou.html">
-            <div class="form-field">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+    <div class="container">
+        <h1>Hurt Feelings Report</h1>
+        <form action="your-server-endpoint" method="POST">
+
+            <!-- Part I - Administrative Data -->
+            <h2>Part I - Administrative Data</h2>
+            <label for="whinerName">A. Whiner's Name:</label>
+            <input type="text" id="whinerName" name="whinerName" required>
+
+            <label for="rankGrade">B. Rank/Grade:</label>
+            <input type="text" id="rankGrade" name="rankGrade" required>
+
+            <label for="socialSecurityNumber">C. Social Security Number:</label>
+            <input type="text" id="socialSecurityNumber" name="socialSecurityNumber" required>
+
+            <!-- Part II - Incident Report -->
+            <h2>Part II - Incident Report</h2>
+            <label for="locationOfHurtfulIncident">C. Location of Hurtful Incident:</label>
+            <input type="text" id="locationOfHurtfulIncident" name="locationOfHurtfulIncident" required>
+
+            <label for="dateOfReport">D. Date of Report:</label>
+            <input type="date" id="dateOfReport" name="dateOfReport" required>
+
+            <!-- E. Injury -->
+            <h2>E. Injury (Mark all that apply)</h2>
+            <div>
+                <input type="checkbox" id="thinSkinned" name="injuryType" value="thinSkinned">
+                <label for="thinSkinned">I am thin skinned</label>
             </div>
-            <div class="form-field">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <div>
+                <input type="checkbox" id="permanentDamage" name="injuryType" value="permanentDamage">
+                <label for="permanentDamage">Is there permanent feeling damage?</label>
             </div>
-            <div class="form-field">
-                <label for="sin">Social Insurance Number:</label>
-                <input type="text" id="sin" name="sin" required>
+
+            <!-- F. Reason for Filing This Report -->
+            <h2>F. Reason for Filing This Report (Mark all that apply)</h2>
+            <div>
+                <input type="checkbox" id="needsFixing" name="reasonForReport" value="needsFixing">
+                <label for="needsFixing">The Army needs to fix my problems</label>
             </div>
-            <div class="form-field">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
+            <div>
+                <input type="checkbox" id="notAHero" name="reasonForReport" value="notAHero">
+                <label for="notAHero">I was told that I am not a hero</label>
             </div>
-            <div class="form-field">
-                <input type="submit" value="Submit">
-            </div>
+
+            <!-- G. Narrative -->
+            <h2>G. Narrative</h2>
+            <label for="narrative">Tell us in your own sissy words how your feelings were hurt:</label>
+            <textarea id="narrative" name="narrative" rows="4" required></textarea>
+
+            <input type="submit" value="Submit Report">
         </form>
     </div>
 </body>
 </html>
-
 
