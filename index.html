@@ -1,74 +1,78 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Hesse's Website</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            font-size: 1.1em;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Hesse's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        footer {
+            text-align: center; /* Center the footer content */
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 1.1em;
+        }
 
-        .social-links {
-            display: inline-block;
-        }
+        .social-links {
+            display: flex; /* Use flexbox for centering and spacing */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            gap: 10px; /* Reduce the gap between links */
+            flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+        }
 
-        .social-links a {
-            color: inherit;
-            text-decoration: none;
-            margin: 0 8px;
-        }
+        .social-links a {
+            color: inherit;
+            text-decoration: none;
+            /* margin: 0 8px; Removed individual margins as gap handles spacing */
+        }
 
-        .social-links i {
-            margin-right: 5px;
-        }
+        .social-links i {
+            margin-right: 5px;
+        }
 
-        .social-links span.separator {
-            margin: 0 6px;
-            color: #aaa;
-        }
-    </style>
+        .social-links span.separator {
+            margin: 0 6px; /* Keep a small margin for the separator */
+            color: #aaa;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contactus.html">Contact Us</a></li>
-            </ul>
-        </div>
-    </nav>
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="content">
-        <h1>Scroll Down!!</h1>
-        <img src="hand_down.png" alt="Look Down" style="transform: rotate(0deg); max-width: 100%; height: auto;">
-        
-        <h1>What cha looking at!!</h1>
-        <img src="model_me.jpg" alt="Welcome Image" style="max-width: 100%; height: auto;">
-        
-        <h1>You've been Hesse'd</h1>
-        <br>
-        <h3>Got Something to Say about it?</h3>
-        <h3><a href="contactus.html">Let's Talk About it</a></h3>
-    </div>
+    <div class="content">
+        <h1>Scroll Down!!</h1>
+        <img src="hand_down.png" alt="Look Down" style="transform: rotate(0deg); max-width: 100%; height: auto;">
+        
+        <h1>What cha looking at!!</h1>
+        <img src="model_me.jpg" alt="Welcome Image" style="max-width: 100%; height: auto;">
+        
+        <h1>You've been Hesse'd</h1>
+        <br>
+        <h3>Got Something to Say about it?</h3>
+        <h3><a href="contactus.html">Let's Talk About it</a></h3>
+    </div>
 
-    <footer>
-        <p>Connect with me on social media:</p>
-        <div class="social-links">
-            <a href="https://x.com/hessething" target="_blank"><i class="fab fa-x-twitter"></i>Twitter</a>
-            <span class="separator">|</span>
-            <a href="https://facebook.com/jay.hesse" target="_blank"><i class="fab fa-facebook-f"></i>Facebook</a>
-            <span class="separator">|</span>
-            <a href="https://www.snapchat.com/add/hessekins83" target="_blank"><i class="fab fa-snapchat-ghost"></i>Snapchat</a>
-        </div>
-    </footer>
+    <footer>
+        <p>Connect with me on social media:</p>
+        <div class="social-links">
+            <a href="https://x.com/hessething" target="_blank">Twitter</a>
+            <span class="separator">|</span>
+            <a href="https://facebook.com/jay.hesse" target="_blank">Facebook</a>
+            <span class="separator">|</span>
+            <a href="https://www.snapchat.com/add/hessekins83" target="_blank">Snapchat</a>
+        </div>
+    </footer>
 </body>
 
 </html>
