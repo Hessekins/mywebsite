@@ -1,78 +1,194 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Hesse's Website</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>My Dating Profile</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        footer {
-            text-align: center; /* Center the footer content */
-            margin-top: 40px;
-            padding: 20px;
-            font-size: 1.1em;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            color: #333;
         }
-
-        .social-links {
-            display: flex; /* Use flexbox for centering and spacing */
-            justify-content: center; /* Center items horizontally */
-            align-items: center; /* Center items vertically */
-            gap: 10px; /* Reduce the gap between links */
-            flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
         }
-
-        .social-links a {
-            color: inherit;
-            text-decoration: none;
-            /* margin: 0 8px; Removed individual margins as gap handles spacing */
+        /* Custom styles for rounded corners and shadows */
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            padding: 2rem;
+            margin-bottom: 2rem;
         }
-
-        .social-links i {
-            margin-right: 5px;
+        .btn-primary {
+            background-color: #ef4444; /* Red 500 - more romantic/dating feel */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem; /* rounded-lg */
+            transition: background-color 0.3s ease;
         }
-
-        .social-links span.separator {
-            margin: 0 6px; /* Keep a small margin for the separator */
-            color: #aaa;
+        .btn-primary:hover {
+            background-color: #dc2626; /* Red 600 */
+        }
+        .text-accent {
+            color: #ef4444; /* Red 500 */
         }
     </style>
 </head>
+<body class="antialiased">
 
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contactus.html">Contact Us</a></li>
+    <!-- Header Section -->
+    <header class="bg-red-600 text-white p-4 shadow-lg">
+        <nav class="container flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold rounded-md px-2 py-1 hover:bg-red-500 transition-colors">Jay</a>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="hover:text-red-200 transition-colors rounded-md px-3 py-2">Home</a></li>
+                <li><a href="#about" class="hover:text-red-200 transition-colors rounded-md px-3 py-2">About Me</a></li>
+                <li><a href="#interests" class="hover:text-red-200 transition-colors rounded-md px-3 py-2">My Interests</a></li>
+                <li><a href="#looking-for" class="hover:text-red-200 transition-colors rounded-md px-3 py-2">What I Seek</a></li>
+                <li><a href="#connect" class="hover:text-red-200 transition-colors rounded-md px-3 py-2">Let's Connect</a></li>
             </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-red-500 to-pink-600 text-white py-20 text-center shadow-inner rounded-b-xl mb-8">
+        <div class="container flex flex-col items-center">
+            <!-- Placeholder for your profile picture -->
+            <img src="https://placehold.co/150x150/ef4444/ffffff?text=Your+Photo" alt="Your Profile Picture" class="w-36 h-36 rounded-full border-4 border-white shadow-lg mb-6 object-cover">
+            <h1 class="text-5xl font-extrabold mb-4">Hi, I'm Jay!</h1>
+            <p class="text-xl mb-8 max-w-2xl">
+                I put the 'Eh' in Canada and the 'why' in everything else. Let's find out why we click!
+            </p>
+            <a href="#about" class="btn-primary inline-block font-semibold shadow-lg hover:shadow-xl transition-all duration-300">Get To Know Me</a>
         </div>
-    </nav>
+    </section>
 
-    <div class="content">
-        <h1>Scroll Down!!</h1>
-        <img src="hand_down.png" alt="Look Down" style="transform: rotate(0deg); max-width: 100%; height: auto;">
-        
-        <h1>What cha looking at!!</h1>
-        <img src="model_me.jpg" alt="Welcome Image" style="max-width: 100%; height: auto;">
-        
-        <h1>You've been Hesse'd</h1>
-        <br>
-        <h3>Got Something to Say about it?</h3>
-        <h3><a href="contactus.html">Let's Talk About it</a></h3>
-    </div>
+    <!-- About Me Section -->
+    <section id="about" class="container card">
+        <h2 class="text-4xl font-bold text-accent mb-6 text-center">About Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <p class="text-lg leading-relaxed mb-4">
+                    They say I'm a bit of a chameleon – sometimes I'm the quiet observer, soaking it all in, and other times, you can't get me to stop talking! It really just depends on the vibe, and I'm pretty good at adapting. I value genuine connections and a good laugh.
+                </p>
+                <p class="text-lg leading-relaxed">
+                    Life's an adventure, and I'm here for it, whether it's a deep conversation over coffee or an impromptu road trip. If you appreciate someone who can be both thoughtful and playfully chatty, we might just get along famously.
+                </p>
+            </div>
+            <!-- Placeholder for an image related to your 'About Me' section -->
+            <div class="flex justify-center">
+                <img src="https://placehold.co/400x300/f87171/ffffff?text=About+Me+Image" alt="About Me Image" class="rounded-lg shadow-md w-full max-w-md object-cover">
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>Connect with me on social media:</p>
-        <div class="social-links">
-            <a href="https://x.com/hessething" target="_blank">Twitter</a>
-            <span class="separator">|</span>
-            <a href="https://facebook.com/jay.hesse" target="_blank">Facebook</a>
-            <span class="separator">|</span>
-            <a href="https://www.snapchat.com/add/hessekins83" target="_blank">Snapchat</a>
+    <!-- My Interests & Hobbies Section -->
+    <section id="interests" class="container card">
+        <h2 class="text-4xl font-bold text-accent mb-6 text-center">My Interests & Hobbies</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Tech & Brain Games -->
+            <div class="bg-red-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                <h3 class="text-2xl font-semibold text-red-800 mb-2">Tech & Brain Games</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Diving into the latest tech gadgets and trends</li>
+                    <li>Mastering strategy in board games</li>
+                    <li>Outsmarting opponents in card games</li>
+                </ul>
+            </div>
+            <!-- Outdoor & Adventure -->
+            <div class="bg-red-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                <h3 class="text-2xl font-semibold text-red-800 mb-2">Outdoor & Adventure</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Exploring new trails on my bike</li>
+                    <li>Soaking up the sun at the beach</li>
+                    <li>Embracing all things outdoors</li>
+                </ul>
+            </div>
+            <!-- Social & Family -->
+            <div class="bg-red-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                <h3 class="text-2xl font-semibold text-red-800 mb-2">Social & Family</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Cherishing time with family</li>
+                    <li>Enjoying lively social gatherings</li>
+                    <li>Always open to new experiences (and maybe teaching you a new card trick!)</li>
+                </ul>
+            </div>
+            <!-- Add more interest cards as needed -->
+        </div>
+    </section>
+
+    <!-- What I'm Looking For Section -->
+    <section id="looking-for" class="container card">
+        <h2 class="text-4xl font-bold text-accent mb-6 text-center">What I'm Looking For</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Genuine Connection -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <!-- Placeholder for an image representing connection -->
+                <img src="https://placehold.co/600x400/fca5a5/ffffff?text=Good+Company" alt="Quality 1 Image" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">A True Listener</h3>
+                    <p class="text-gray-600 mb-4">
+                        I'm hoping to find someone who truly listens and understands, not just hears. Someone who's genuinely curious about the 'why' behind things, just like me.
+                    </p>
+                </div>
+            </div>
+            <!-- Forward-Looking -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <!-- Placeholder for an image representing shared experiences -->
+                <img src="https://placehold.co/600x400/fca5a5/ffffff?text=Shared+Adventures" alt="Quality 2 Image" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Eyes on the Future</h3>
+                    <p class="text-gray-600 mb-4">
+                        I believe in building something new and exciting, leaving past relationships exactly where they belong – in the past. Let's focus on our story, not old chapters.
+                    </p>
+                </div>
+            </div>
+            <!-- Positive & Understanding -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <!-- Placeholder for an image representing humor/positivity -->
+                <img src="https://placehold.co/600x400/fca5a5/ffffff?text=Positive+Vibes" alt="Quality 3 Image" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Kindred Spirit</h3>
+                    <p class="text-gray-600 mb-4">
+                        Ultimately, I'm looking for a partner in crime, someone with whom I can share life's joys, navigate its challenges, and always have a good laugh.
+                    </p>
+                </div>
+            </div>
+            <!-- Add more qualities/preferences as needed -->
+        </div>
+    </section>
+
+    <!-- Let's Connect Section -->
+    <section id="connect" class="container card">
+        <h2 class="text-4xl font-bold text-accent mb-6 text-center">Let's Connect</h2>
+        <div class="max-w-xl mx-auto text-center">
+            <p class="text-lg leading-relaxed mb-6">
+                If my profile resonated with you and you're curious to know more, let's connect! You can find me on:
+            </p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <span class="text-red-600 text-lg font-medium">Tinder</span>
+                <span class="text-red-600 text-lg font-medium">Facebook Dating</span>
+            </div>
+            <p class="text-lg leading-relaxed">
+                Looking forward to seeing if our 'whys' align!
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-red-700 text-white py-8 text-center mt-8 rounded-t-xl">
+        <div class="container">
+            <p>&copy; 2025 Jay. All rights reserved.</p>
+            <p class="text-sm mt-2">Designed with ❤️</p>
         </div>
     </footer>
-</body>
 
+</body>
 </html>
