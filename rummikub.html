@@ -1,0 +1,331 @@
+<style>/*RESET*/
+    html, body, h1, h2, h3, h4, h5, h6, img, p, ul, ol, li, a, figure, figcaption, table {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-weight: normal;
+        font-style: inherit;
+        font-size: 100%;
+        font-family: inherit;
+        color: inherit;
+        vertical-align: baseline;
+        line-height: 0;
+    }
+/*COLOURS*/
+
+    body h1, body h2 {
+        background-color: #007f64;
+    }
+    body h3, body a {
+        color: #007f64;
+    }
+
+    /*GENERAL*/
+    body, h1, h2, table {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box; /* Firefox */
+        -webkit-box-sizing: border-box; /* Safari */
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 80px 20px 80px;
+    }
+    h1, h2, h3, h4, h5, h6, figcaption {
+        line-height: 1;
+    }
+    h1, h3, h4, h5, h6, thead {
+        font-weight: bold;
+    }
+    h1, h2 {
+        width: 100%;
+        font-size: 16px;
+        color: #fff;
+    }
+    h1 {
+        padding: 15px 15px 10px 15px;
+        text-transform: uppercase;
+    }
+    h2 {
+        padding: 0px 15px 15px 15px;
+        font-style: italic;
+    }
+    h3, h4, h5, h6, p, a, li, figcaption, table {
+        font-size: 14px;
+    }
+    h3, h4, h5, p, li, figcaption, table {
+        color: #535557;
+    }
+    h3 {
+        text-transform: uppercase;
+    }
+    h3 {
+        width: 100%;
+        margin-top: 40px;
+        border-bottom: 2px solid;
+    }
+    h6 {
+        color: #aaabab;
+    }
+    h4, h5, h6, p, ul, ol, img {
+        margin-top: 15px;
+    }
+    ul ul, ul ol, ol ul, ol ol {
+        margin-top: 0 !important;
+    }
+    p, a, li, table {
+        line-height: 145%;
+    }
+    p#em {
+        line-height: 100%;
+        font-style:italic;
+        font-weight:bold;
+    }
+    li {
+        margin-left: 40px;
+    }
+    ul li {
+        list-style-type: square;
+    }
+    a {
+        font-weight: bold;
+    }
+    a:hover {
+        color: #aaabab !important;
+    }
+    /*IMAGES*/
+    img, figcaption {
+        display: block;
+    }
+    img.large {
+        width: 100%;
+        height: 100%;
+    }
+    img.small {
+        width: 50%;
+        height: 100%;
+    }
+    figcaption {
+        margin-top: 5px;
+        font-weight: bold;
+    }
+    /*TABLE SPECIFIC*/
+    table {
+        margin-top: 15px;
+        border-collapse: collapse;
+    }
+    table, th, td {
+        border: 1px solid #aaabab;
+    }
+    th, td {
+        padding: 5px;
+    }
+    /*FOOTER*/
+    p#footer {
+        width: 100%;
+        margin: 45px 0 0 0;
+        padding-top: 15px;
+        border-top: 1px solid;
+        text-align: center;
+        color: #aaabab;
+    }
+    .column {
+        float: left;
+        width: 50%;
+        }</style>
+<html>
+<button onClick="window.location.reload();">New Game</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rummikub Score Keeper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input[type="number"] {
+      width: 60px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Rummikub Score Keeper</h1>
+
+  <div id="setup">
+    <label for="numPlayers">Number of Players (1-4):</label>
+    <input type="number" id="numPlayers" min="1" max="4" value="2">
+    <button onclick="setupPlayers()">Start Game</button>
+    <div id="playerNames" class="hidden"></div>
+  </div>
+
+  <div id="scoreSection" class="hidden">
+    <h2>Enter Scores for Round <span id="roundNumber">1</span></h2>
+    <form id="scoreForm">
+      <div id="scoreInputs"></div>
+      <button type="submit">Submit Round</button>
+    </form>
+
+    <h2>Scoreboard</h2>
+    <table id="scoreTable">
+      <thead id="scoreHeader"></thead>
+      <tbody id="scoreBody"></tbody>
+    </table>
+  </div>
+
+  <script>
+    let playerNames = [];
+    let scores = [];
+    let round = 1;
+
+    function setupPlayers() {
+      const num = parseInt(document.getElementById('numPlayers').value);
+      if (num < 1 || num > 4) {
+        alert("Please choose between 1 and 4 players.");
+        return;
+      }
+
+      const nameDiv = document.getElementById("playerNames");
+      nameDiv.innerHTML = "<h3>Enter Player Names:</h3>";
+      for (let i = 0; i < num; i++) {
+        nameDiv.innerHTML += `
+          <label>Player ${i + 1} Name: 
+            <input type="text" id="player${i}" placeholder="Player ${i + 1}" required>
+          </label><br>
+        `;
+      }
+      nameDiv.innerHTML += `<button onclick="beginGame()">Begin</button>`;
+      nameDiv.classList.remove("hidden");
+    }
+
+    function beginGame() {
+      playerNames = [];
+      scores = [];
+      round = 1;
+      document.getElementById("scoreBody").innerHTML = "";
+
+      const num = parseInt(document.getElementById('numPlayers').value);
+      for (let i = 0; i < num; i++) {
+        const name = document.getElementById(`player${i}`).value || `Player ${i + 1}`;
+        playerNames.push(name);
+        scores.push([]); // Initialize score array per player
+      }
+
+      document.getElementById("setup").classList.add("hidden");
+      document.getElementById("scoreSection").classList.remove("hidden");
+      document.getElementById("roundNumber").textContent = round;
+      renderScoreInputs();
+      renderScoreTable();
+    }
+
+    function renderScoreInputs() {
+      const inputDiv = document.getElementById("scoreInputs");
+      inputDiv.innerHTML = "";
+      playerNames.forEach((name, i) => {
+        inputDiv.innerHTML += `
+          <label>${name}: 
+            <input type="number" name="score${i}" required>
+          </label><br>
+        `;
+      });
+    }
+
+    function renderScoreTable() {
+      const header = document.getElementById("scoreHeader");
+      const body = document.getElementById("scoreBody");
+
+      // Header
+      header.innerHTML = "<tr><th>Round</th>" + 
+        playerNames.map(name => `<th>${name}</th>`).join('') + "</tr>";
+
+      // Body
+      body.innerHTML = "";
+      for (let r = 0; r < round - 1; r++) {
+        let row = `<tr><td>${r + 1}</td>`;
+        for (let p = 0; p < playerNames.length; p++) {
+          row += `<td>${scores[p][r]}</td>`;
+        }
+        row += "</tr>";
+        body.innerHTML += row;
+      }
+
+      // Totals row
+      let totalRow = `<tr><td><strong>Total</strong></td>`;
+      for (let p = 0; p < playerNames.length; p++) {
+        const sum = scores[p].reduce((a, b) => a + b, 0);
+        totalRow += `<td><strong>${sum}</strong></td>`;
+      }
+      totalRow += "</tr>";
+      body.innerHTML += totalRow;
+    }
+
+    document.getElementById("scoreForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      let roundScores = [];
+      let zeroIndex = -1;
+      let otherTotal = 0;
+
+      // Collect scores and find the player with 0
+      for (let i = 0; i < playerNames.length; i++) {
+        const val = parseInt(formData.get(`score${i}`));
+        if (isNaN(val)) {
+          alert("Please enter all scores.");
+          return;
+        }
+        if (val === 0) {
+          if (zeroIndex !== -1) {
+            alert("Only one player can have 0 points (the round winner).");
+            return;
+          }
+          zeroIndex = i;
+        }
+        roundScores.push(val);
+      }
+
+      // Validate one player has zero
+      if (zeroIndex === -1) {
+        alert("One player must have 0 points to end the round.");
+        return;
+      }
+
+      // Sum all other scores
+      for (let i = 0; i < roundScores.length; i++) {
+        if (i !== zeroIndex) {
+          otherTotal += roundScores[i];
+        }
+      }
+
+      // Apply scores
+      for (let i = 0; i < playerNames.length; i++) {
+        if (i === zeroIndex) {
+          scores[i].push(otherTotal); // Finisher gets sum of other scores
+        } else {
+          scores[i].push(-roundScores[i]); // Others get negative values
+        }
+      }
+
+      round++;
+      document.getElementById("roundNumber").textContent = round;
+      renderScoreInputs();
+      renderScoreTable();
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
