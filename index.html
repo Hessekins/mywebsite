@@ -62,18 +62,25 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white bg-black/40">
-    <h1 class="text-5xl font-extrabold mb-4">Hi, I'm Jay</h1>
-    <p class="text-xl max-w-xl text-center">
-      Curiosity, tech, and a questionable sense of humor.
-    </p>
-  </div>
-</div>
+    <!-- Hero Section (Video Background + Overlay Text) -->
+    <section id="home" class="relative bg-gradient-to-r from-[#024950] to-[#0FA4AF] text-white py-20 text-center shadow-inner rounded-b-xl mb-8 overflow-hidden">
+        <!-- Background Video -->
+        <video
+            class="absolute inset-0 w-full h-full object-cover"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+        >
+            <source src="/videos/videome.mp4" type="video/mp4">
+        </video>
 
+        <!-- Dark overlay for readability -->
+        <div class="absolute inset-0 bg-black/40"></div>
 
-    <section id="home" class="bg-gradient-to-r from-[#024950] to-[#0FA4AF] text-white py-20 text-center shadow-inner rounded-b-xl mb-8">
-        <div class="container flex flex-col items-center">
+        <!-- Foreground content -->
+        <div class="relative z-10 container flex flex-col items-center">
             <!-- Placeholder for your profile picture -->
             <img src="/images/GTA5_Myself.png" alt="Your Profile Picture" class="w-36 h-36 rounded-full border-4 border-white shadow-lg mb-6 object-cover">
             <h1 class="text-5xl font-extrabold mb-4">Hi, I'm Jay!</h1>
